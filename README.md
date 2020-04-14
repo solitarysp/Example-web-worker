@@ -1,1 +1,1 @@
-# Example-web-worker
+- Demo chạy web worker
