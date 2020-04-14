@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input id="input" name="input" placeholder="data gửi lên worker">
+
+<button onclick="function sendWorker() {
+const dataInput=document.getElementById('input');
+ w.postMessage(dataInput.value);
+}
+
+sendWorker()">Submit
+</button>
+<script>
+
+    w = new Worker('workerjs.js');
+    w.onmessage = (e) => {
+        console.log(`Received from worker: ${e.data}`);
+    }
+
+</script>
+</body>
+</html>
