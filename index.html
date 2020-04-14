@@ -16,6 +16,8 @@ const dataInput=document.getElementById('input');
 sendWorker()">Submit
 </button>
 <script>
+ var supportWebWorker = typeof window.Worker === "function";
+ console.log("Brower có hỗ trợ web worker : "+supportWebWorker);
 
     w = new Worker('workerjs.js');
     w.onmessage = (e) => {
